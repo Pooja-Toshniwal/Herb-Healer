@@ -1,0 +1,231 @@
+body,
+h1,
+h2,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('brooke-lark-kXQ3J7_2fpc-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+/* Style the header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2b6746;
+    padding: 20px 20px;
+    /* Increase the top and bottom padding to increase the size */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow for depth */
+}
+
+/* Style the logo */
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style the navigation bar */
+nav ul {
+    list-style: none;
+    display: flex;
+    /* Display navigation items in a row */
+}
+
+nav ul li {
+    margin-right: 20px;
+    /* Adjust the spacing between navigation items */
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    /* White text color for contrast */
+    font-weight: bold;
+    /* Make the text bold */
+    transition: color 0.3s ease;
+    /* Smooth color transition on hover */
+}
+
+/* Add hover effect to navigation links */
+nav a:hover {
+    color: #a1e9b9;
+    /* Change color on hover */
+}
+
+/* Style the background color for the rest of the page */
+body {
+    background-color: #f4f4f4;
+    /* A light gray background */
+}
+
+/* Style text and links for the main content area */
+.main-content {
+    color: #333;
+    /* Dark gray text color */
+}
+
+.main-content a {
+    color: #0099cc;
+    /* Blue link color */
+    text-decoration: underline;
+    /* Underline links */
+}
+
+/* Style buttons or call-to-action elements */
+.button {
+    background-color: #2b6746;
+    ;
+    /* Blue button color */
+    color: #fff;
+    /* White text color for buttons */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth background color transition on hover */
+}
+
+.button:hover {
+    background-color: #2b6746;
+    ;
+    /* Slightly darker blue on hover */
+}
+
+
+
+
+/* Center container */
+.center-container {
+    display: flex;
+    justify-content: space-between;
+    /* Adjusted to evenly distribute space */
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Style the selection section */
+.selection-section {
+    text-align: center;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 0.35;
+    /* Reduced width */
+    margin-left: 200px;
+    /* Increased spacing to 25px */
+    background-color: #f7f7f7;
+}
+
+.drop2 {
+    margin-top: 10px;
+}
+
+.selection-section h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Style the dropdown and add button */
+#category-dropdown,
+#symptoms-dropdown {
+    width: 100%; /* Set both dropdowns to 100% width for equal size */
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+#add-symptom {
+    background-color: #2b6746;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-symptom:hover {
+    background-color: #2b6746;
+    ;
+}
+
+/* Style the selected symptoms section */
+.selected-symptoms-section {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 0.35;
+    /* Reduced width */
+    margin-right: 250px;
+    /* Increased spacing to 25px */
+    background-color: #f7f7f7;
+}
+
+.selected-symptoms-section h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#selected-symptoms-list li {
+    margin-bottom: 8px;
+    /* Increase the space between list items */
+    font-size: 14px;
+}
+
+/* Style the selected symptoms list */
+#selected-symptoms-list {
+    list-style: none;
+    padding: 0;
+}
+
+#selected-symptoms-list li {
+    margin-bottom: 3px;
+    font-size: 14px;
+}
+
+/* Style the submit button */
+#submit-button {
+    background-color: #2b6746;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#submit-button:hover {
+    background-color: #2b6746;
+}
+
+/* Style the remove button */
+.remove-button {
+    background-color: #2b6746;
+    color: #fff;
+    padding: 5px 3px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+    /* Add space to the right of the remove button */
+}
+
+.remove-button:hover {
+    background-color: #2b6746;
+}

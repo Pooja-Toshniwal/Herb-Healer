@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptoms Selector</title>
+    <style>
+        /* Your CSS styles go here */
+        .dropdown-container {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dropdown-container">
+        <label for="category-dropdown">Category:</label>
+        <select id="category-dropdown"></select>
+    </div>
+    <div class="dropdown-container">
+        <label for="symptoms-dropdown">Symptoms:</label>
+        <select id="symptoms-dropdown"></select>
+    </div>
+
+    <!-- JavaScript code -->
+    <script>
+        // Define the category and symptom data
+        const dropdownData = {
+            "Digestive System Disorders": [
+                'Digestive Weakness',
+                'Stomach Disorders',
+                'Constipation',
+                'Irritable Bowel Syndrome',
+                'Diarrhea',
+                'Abdominal Pain',
+                'Abdominal Distention',
+                'Abdomen Irregular Fever',
+                'Gastrointestinal Disorders',
+                'Indigestion',
+                'Hyperacidity'
+            ],
+            "Fever and Infectious Diseases": [
+                'Fever',
+                'Chronic Fever',
+                'Tuberculosis',
+                'Typhoid Fever'
+            ],
+            "Cardiovascular Disorders": [
+                'Heart Disease',
+                'Weak Heart',
+                'Heartburn',
+                'Chest Injury',
+                'Chest Pain',
+                'Spleen Disorders',
+                'Hypertension'
+            ],
+            "Mental Health and Neurological Disorders": [
+                'Mental Disorders',
+                'Delusion',
+                'Fainting',
+                'Memory Loss',
+                'Anxiety',
+                'Psychosis',
+                'Epilepsy',
+                'Involuntary Movements'
+            ],
+            "Gynecological and Reproductive Health": [
+                'Menstrual Disorders',
+                'White Discharge (Leukorrhea)',
+                'Female Reproductive Disorders',
+                'Menstrual Blockage',
+                'Painful Menstruation',
+                'Abnormal Uterine Bleeding'
+            ],
+            "Skin Disorders": [
+                'Itching',
+                'Skin Disorders',
+                'Skin Eruptions',
+                'Fungal Skin Infection',
+                'Serious Skin Disorders',
+                'Vitiligo'
+            ],
+            "Respiratory Disorders": [
+                'Cough',
+                'Breathlessness',
+                'Sinusitis',
+                'Common Cold'
+            ],
+            "Urinary Tract and Kidney Disorders": [
+                'Difficulty in Urination',
+                'Kidney Stones',
+                'Urinary Obstruction',
+                'Urinary Disorders'
+            ],
+            "Blood and Circulation Disorders": [
+                'Anemia',
+                'Bleeding Disorders',
+                'Blood Impurity',
+                'Blood Stasis',
+                'Impurity in Blood',
+                'Toxin in Blood'
+            ],
+            "Metabolic and Hormonal Disorders": [
+                'Diabetes',
+                'Obesity',
+                'Hormonal Imbalance'
+            ],
+            "Musculoskeletal Disorders": [
+                'Joint Pain',
+                'Arthritis (Rheumatoid Arthritis, Gouty Arthritis)',
+                'Bone Fracture',
+                'Joint Stiffness',
+                'Sciatica'
+            ],
+            "Infections and Immune System Disorders": [
+                'Worm Infestation',
+                'Tuberculosis',
+                'Wasting Syndrome',
+                'Hepatitis',
+                'Jaundice',
+                'Urticaria',
+                'Impotency',
+                'Infertility'
+            ],
+            "Eye and Ear Disorders": [
+                'Eye Disorders',
+                'Ear Discharge',
+                'Conjunctivitis',
+                'Visual Impairment',
+                'Eye Injury',
+                'Eye Swelling'
+            ],
+            "Dental and Oral Health": [
+                'Mouth Disorders',
+                'Dental Disorders',
+                'Bad Breath',
+                'Oral Ulcers',
+                'Tonsillitis'
+            ],
+            "Injuries and Wound Healing": [
+                'Burn Injury',
+                'Infected Wound',
+                'Pilonidal Cyst',
+                'Perianal Abscess',
+                'Wound Due to Kapha Imbalance'
+            ],
+            "Other Categories": [
+                'Childhood Diseases',
+                'Child Malnutrition',
+                'Disorders During Pregnancy',
+                'Post-Delivery Disorders',
+                'Postnatal Diseases',
+                'Aging-related Disorders',
+                'Snake Bite'
+            ],
+            // Add more categories with their respective symptoms
+        };
+
+        // Function to populate the category dropdown
+        function populateCategoryDropdown() {
+            const categoryDropdown = document.getElementById('category-dropdown');
+
+            // Clear existing options
+            categoryDropdown.innerHTML = '';
+
+            // Add categories as options
+            for (const category in dropdownData) {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categoryDropdown.appendChild(option);
+            }
+
+            // Trigger the change event to populate the symptom dropdown for the selected category
+            categoryDropdown.dispatchEvent(new Event('change'));
+        }
+
+        // Function to populate the symptom dropdown based on the selected category
+        function populateSymptomDropdown(selectedCategory) {
+            const symptomsDropdown = document.getElementById('symptoms-dropdown');
+
+            // Clear existing options
+            symptomsDropdown.innerHTML = '';
+
+            // Get the symptoms for the selected category
+            const symptoms = dropdownData[selectedCategory];
+
+            // Add symptoms as options
+            if (symptoms) {
+                symptoms.forEach(symptom => {
+                    const option = document.createElement('option');
+                    option.value = symptom;
+                    option.textContent = symptom;
+                    symptomsDropdown.appendChild(option);
+                });
+            }
+        }
+
+        // Attach event listener to the category dropdown to populate the symptom dropdown
+        document.getElementById('category-dropdown').addEventListener('change', function () {
+            const selectedCategory = this.value;
+            populateSymptomDropdown(selectedCategory);
+        });
+
+        // Initially populate the category dropdown
+        populateCategoryDropdown();
+    </script>
+</body>
+
+</html>
